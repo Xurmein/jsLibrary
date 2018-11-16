@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>les choses de la DOM</title>
+</head>
+<body>
+    <!--HTML-->
+    <!-- 1 -->
+    <!-- <h1>Bienvenue monde</h1> -->
+    <!-- 2 -->
+    <p id="testParagraph">texte sample</p>
+    <!-- 3 -->
+    <p class=claseSample>"Le paragraph c'est le clase du claseSample"</p>
+<!-- 4 -->
+<button id="clickThis">You won't believe how much you can money save by following these 10 simple steps!</button>
+<!-- 5 -->
+<label for="nameInput">Your name:</label>
+<input type="text" id="nameInput" placeholder="jawn doo">
+    <script>
+        // //1
+        // let x = 0
+        // console.log(x);
+        //2
+        document.getElementById("testParagraph").style.color ="green";
+        console.log(document.getElementById("testParagraph"));
+
+        //3
+        console.log(document.querySelectorAll("p.claseSample"));
+        // document.querySelectorAll("p.claseSample")[0].innerText = "My text has changed";
+        document.querySelectorAll("p.claseSample")[0].innerHTML = "<i>My text changed yo!</i>";
+
+        //4
+        // document.getElementById("clickThis").addEventListener('click', (details)) => {
+        //     console.log(details);
+        // })
+
+        document.getElementById("clickThis").addEventListener("click", (details) => {
+           if (details.target.style.backgroundColor == "blue"){
+               details.target.style.backgroundColor = "red";
+           }else{
+               details.target.style.backgroundColor = "blue";
+           }
+           }
+        );
+
+        //5
+        document.getElementById("nameInput").addEventListener("keyup", e => {
+            console.log(e.target.value);
+            console.log(document.getElementsByTagName("p"));
+        });
+
+        if(e.target.value == ""){
+            document.getElementsByTagName("p")[1].innerText = ("nuffin herr");
+        } else {
+            document.getElementsByTagName("p")[1].innerText = (`say hi to ${e.target.value} motha-fuckas`);
+        }
+
+        
+    </script>
+</body>
+</html>

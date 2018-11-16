@@ -1,0 +1,11 @@
+.navbar {
+    color: white;
+    background-color: pink;
+    font-size: 10px;
+    text-align: center;
+    vertical-align: center;
+    height: 18vh;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    border-bottom: 10px solid purple;
+}
